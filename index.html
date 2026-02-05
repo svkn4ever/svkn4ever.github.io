@@ -1,48 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StudyQuest</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f6f8;
-            color: #333;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background-color: #4CAF50;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-        main {
-            padding: 40px;
-            text-align: center;
-        }
-        a.button {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 10px 20px;
-            background-color: #4CAF50;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-        }
-        a.button:hover {
-            background-color: #45a049;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>StudyQuest</title>
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        background-color: #f4f6f8;
+        color: #333;
+    }
+    header {
+        background-color: #4CAF50;
+        color: white;
+        text-align: center;
+        padding: 30px 0;
+        font-size: 2rem;
+        letter-spacing: 2px;
+    }
+    main {
+        padding: 20px 40px;
+        max-width: 900px;
+        margin: auto;
+    }
+    article {
+        margin-bottom: 40px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #ccc;
+    }
+    h2 {
+        color: #4CAF50;
+    }
+    /* Play Games button at bottom */
+    .play-games-btn {
+        display: block;
+        margin: 60px auto;
+        padding: 15px 30px;
+        background-color: #ff4c4c;
+        color: #fff;
+        text-align: center;
+        font-size: 1.2rem;
+        font-weight: bold;
+        border-radius: 8px;
+        text-decoration: none;
+        width: fit-content;
+        transition: transform 0.3s, background 0.3s;
+    }
+    .play-games-btn:hover {
+        background-color: #ff1a1a;
+        transform: scale(1.1);
+    }
+
+    /* Game section hidden initially */
+    #games {
+        display: none; /* hidden at first */
+        padding: 50px 0;
+        text-align: center;
+        background: #1e1e2f;
+        color: #fff;
+    }
+    .game-card {
+        display: inline-block;
+        background: #2a2a3c;
+        width: 250px;
+        margin: 20px;
+        border-radius: 10px;
+        overflow: hidden;
+        transition: transform 0.3s;
+    }
+    .game-card:hover {
+        transform: scale(1.05);
+    }
+    .game-card img {
+        width: 100%;
+    }
+    .game-card h3 {
+        margin: 10px 0;
+    }
+    .play-button {
+        display: inline-block;
+        margin: 10px 0 20px;
+        padding: 10px 20px;
+        background-color: #ff4c4c;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+    .play-button:hover {
+        background-color: #ff1a1a;
+    }
+</style>
 </head>
 <body>
-    <header>
-        <h1>Welcome to StudyQuest!</h1>
-    </header>
-    <main>
-        <p>Your adventure in learning starts here. Explore topics, practice quizzes, and level up your knowledge!</p>
-        <a href="#" class="button">Start Learning</a>
-    </main>
+<header>StudyQuest</header>
+
+<main>
+    <!-- Example educational articles -->
+    <article>
+        <h2>How to Learn Faster</h2>
+        <p>Learning strategies and tips to absorb information efficiently.</p>
+    </article>
+    <article>
+        <h2>Top 10 Science Facts</h2>
+        <p>Discover fascinating science facts that blow your mind!</p>
+    </article>
+    <article>
+        <h2>History You Didn’t Know</h2>
+        <p>Interesting stories and hidden truths from the past.</p>
+    </article>
+
+    <!-- Slick button to unlock games -->
+    <a href="#games" class="play-games-btn" onclick="showGames()">🎮 Play Games</a>
+</main>
+
+<!-- Hidden games section -->
+<section id="games">
+    <h2>Featured Games</h2>
+    <div class="game-card">
+        <img src="https://via.placeholder.com/250x150" alt="Game 1">
+        <h3>Zombie Escape</h3>
+        <a href="#" class="play-button">Play Now</a>
+    </div>
+    <div class="game-card">
+        <img src="https://via.placeholder.com/250x150" alt="Game 2">
+        <h3>Pixel Adventure</h3>
+        <a href="#" class="play-button">Play Now</a>
+    </div>
+</section>
+
+<script>
+    function showGames() {
+        document.getElementById('games').style.display = 'block';
+        document.getElementById('games').scrollIntoView({behavior: 'smooth'});
+    }
+</script>
+
 </body>
 </html>
